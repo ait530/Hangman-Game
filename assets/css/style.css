@@ -1,6 +1,6 @@
 body {
 
-  background-color:black;
+  background-image:url("../images/retina_wood.png");
 }
 
 
@@ -15,14 +15,15 @@ body {
 
 .page-header {
 
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Monoton', cursive;
   text-align:center;
-  color:white;
+  color:yellow;
   height:100px;
   background-color:#663300;
   border-color:black;
   border-height:10px;
   width:100%;
+  height:180px;
  
 
 
@@ -50,7 +51,6 @@ body {
   
   margin-top:25px;
   text-align: center;
-  font-size:100px;
   font-family: 'Open Sans', sans-serif;
   color:black;
   position:relative;
@@ -62,17 +62,24 @@ body {
 
 
 
+.images {
+
+  float:left;
+  position:absolute;
+  margin-top:150px;
+  margin-right:100px;
+
+
+}
+
+
 
 
 .img-fluid {
-  float:left;
-  height:200px;
-  width:200px;
-  margin-left:900px;
-  position:relative;
-
-
-
+  height:360px;
+  width:360px;
+  margin-left:700px;
+  
 
 }
 
@@ -87,6 +94,6 @@ body {
   background-color:black;
   color:white;
   text-align:center;
-  padding:10px;
+  padding:40px;
 
 }
