@@ -1,17 +1,26 @@
 body {
 
-  background-color:black;
+  background-color:white;
+  color:black;
 
+}
+
+.jumbotron {
+
+  background-color:#993300;
 
 }
 
 
-
 .page-header {
 
+  font-style: times;
   text-align:center;
-  color:white;
+  color:black;
   height:100px;
+  background-color:red;
+  border-color:black;
+  width:100%;
 
 }
 
@@ -19,6 +28,34 @@ body {
 .instructions {
 
 
+  color:black;
+  text-align: center;
+
+}
+
+
+img{
+  float:left;
+  height:100px;
+  width:100px;
+}
+
+
+.game {
+  float:left;
+  margin-top:25px;
+  text-align: center;
+  font-size:100px;
+
+}
+
+
+.panel-footer {
+
+
+  background-color:black;
   color:white;
+  text-align:center;
+  padding:50px;
 
 }
