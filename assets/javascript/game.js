@@ -10,7 +10,8 @@ var wordList = [
  "ristretto",
  "bombon",
  "frappe",
- "antoccino"
+ "antoccino",
+ "marocchino"
 
 ]
 
@@ -31,7 +32,7 @@ var winCounter = 0;
 var lossCounter = 0;
 
 /*Number of chances you have before the game is over*/
-var numGuesses = 11;
+var numGuesses = 10;
 
 
 
@@ -53,6 +54,8 @@ RoundComplete function
 
 
 
+
+
 function startGame(){
 /*
 1. select a word at random x
@@ -64,7 +67,7 @@ and wronggueses is empty as well x
 */
 wrongGuesses = [];
 console.log("this is wrong guesses in startGame", wrongGuesses);
-numGuesses = 11;
+numGuesses = 10;
 blanksAndSuccesses = [];
 
 /*Randomly generates word from the list*/
@@ -84,6 +87,8 @@ document.getElementById('guesses-left').innerHTML = numGuesses;
 
 
 }
+
+
 
 
 
@@ -140,6 +145,9 @@ function checkLetters(letter){
 
 
 
+
+
+
 function roundComplete(){
     /*
     1. Its going to update the HTML with letters that are in the word
@@ -160,19 +168,15 @@ function roundComplete(){
     console.log(blanksAndSuccesses);
     if(lettersInChosenWord.join(" ") === blanksAndSuccesses.join(" ")){
         winCounter++;
-        alert("You win!!");
+        alert("You win!");
         document.getElementById('win-counter').innerHTML = winCounter;
         startGame();
     }else if(numGuesses === 0){
         document.getElementById('loss-counter').innerHTML  = lossCounter ++;
         document.getElementById('wrong-guesses').innerHTML = "";
-        alert("you don't have any more guesses");        
+        alert("Sorry, you loss this round.");        
         startGame();
     }
-
-
-
-
 
 
 }
@@ -197,9 +201,3 @@ document.onkeyup = function(event){
     roundComplete();
 
 }
-
-
-
-
-
-
