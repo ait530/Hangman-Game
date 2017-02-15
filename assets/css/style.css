@@ -1,61 +1,92 @@
 body {
 
-  background-color:white;
-  color:black;
-
+  background-color:black;
 }
+
 
 .jumbotron {
 
-  background-color:#993300;
+  background-image:url("../images/retina_wood.png");
+  height:800px;
 
 }
+
 
 
 .page-header {
 
-  font-style: times;
+  font-family: 'Open Sans', sans-serif;
   text-align:center;
-  color:black;
+  color:white;
   height:100px;
-  background-color:red;
+  background-color:#663300;
   border-color:black;
+  border-height:10px;
   width:100%;
+ 
+
+
 
 }
+
+
 
 
 .instructions {
 
-
+  font-family: 'Open Sans', sans-serif;
   color:black;
   text-align: center;
-
-}
-
-
-img{
   float:left;
-  height:100px;
-  width:100px;
+
 }
+
+
+
+
 
 
 .game {
-  float:left;
+  
   margin-top:25px;
   text-align: center;
   font-size:100px;
+  font-family: 'Open Sans', sans-serif;
+  color:black;
+  position:relative;
+  float:left;
+
+
 
 }
 
 
-.panel-footer {
 
 
+
+.img-fluid {
+  float:left;
+  height:200px;
+  width:200px;
+  margin-left:900px;
+  position:relative;
+
+
+
+
+}
+
+
+
+
+
+.footer {
+  clear:both;
+  overflow:auto;
+  margin-top:250px;
   background-color:black;
   color:white;
   text-align:center;
-  padding:50px;
+  padding:10px;
 
 }

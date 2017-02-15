@@ -79,7 +79,11 @@ Object:
   
   <!--External CSS-->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <!-- External Reset CSS -->
+  <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+
+  <!-- Voltaire font -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
 
@@ -87,42 +91,55 @@ Object:
 
 <body>
 
-<div class="jumbotron">
+<div class="jumbotron jumbotron-fluid">
   <div class="container">
     <div class="page-header">
       <h1>Hangman: Coffee Edition</h1>
     </div>
 
+    
+        
+    
+    <div class ="game">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="instructions">
+          <h1>Press Any Key To Get Started!</h1>
+          </div>
+            <p>Guesses Left: <span id="guesses-left"></span></p>
 
-    <div class="instructions">
-     <h1>Press Any Key To Get Started!</h1>
-    </div>
+            <p>Wrong Guesses: <span id="wrong-guesses"></span></p>
 
-    <div class="images">
-      <div class="coffeeImage">
-      <img src="assets/images/cup_of_coffee_188317.jpg" alt="coffee">
+            <p>Wins: <span id="win-counter"></span></p>
+
+            <p>Losses: <span id="loss-counter"></span></p>
+            <h3 id="word-blank"></h3>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class ="game">
-    <p>Guesses Left: <span id="guesses-left"></span></p>
-
-    <p>Wrong Guesses: <span id="wrong-guesses"></span></p>
-
-    <p>Wins: <span id="win-counter"></span></p>
-
-    <p>Losses: <span id="loss-counter"></span></p>
-    <h3 id="word-blank"></h3>
+  
+    <div class="row">
+      <div class="col-md-4">
+        <img src="assets/images/cup_of_coffee_188317.jpg" class="img-fluid" alt="coffee">
+      </div>
     </div>
-
-
-
-
-    <!--JavaScript (game.js)-->
-    <script type="text/javascript" src="assets/javascript/game.js"></script>
-  </div>
 </div>
-<div class="panel-footer">Copyright 2017 Aaron Trierweiler</div>
+
+
+
+
+
+
+
+
+
+<div class="footer">
+&#169; Copyright 2017 Aaron Trierweiler</div>
+
+<!--JavaScript (game.js)-->
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
 
 </div>
 </body>

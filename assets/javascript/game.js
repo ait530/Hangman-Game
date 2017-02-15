@@ -1,35 +1,57 @@
-
-// var wordList = [
-// "latte"
-// "capp"
-// "coffee"
-// "americano"
-// "frappuccino"
-// "macchiato"
-// "esspresso"
-
-// ]
-
-
 /* var worlist is an array [] that stores the words(answers) for hangman game*/
 var wordList = [
- "coffe",
+ "coffee",
  "latte",
  "cappuccino",
  "americano",
- "macchaito"
+ "macchiato",
+ "doppio",
+ "espresso",
+ "ristretto",
+ "bombon",
+ "frappe",
+ "antoccino"
+
 ]
 
-/* "" stands for whatever word from the wordList array(?)*/
+/* "" stands for a string; when we select a word at random, it goes in this array; the word that the user has to guess */
 var chosenWord = "";
+/*Array that breaks up the chosen word into letters so that the user can guess, and we can manipulate those letters throughout the game*/
 var letterInChosenWord = [];
+/*Holds the number of letters in the word*/
 var numBlanks = 0;
+/*Holds both underscores and letters; whether the user guesses right or wrong*/
 var blanksAndSuccesses = [];
+/*Holds wrong guesses; holds the incorrect letters*/
 var wrongGuesses = [];
 
+/*Win counter starts at 0 and builds up with number of wins*/
 var winCounter = 0;
-var lossCounter = 1;
+/*Number of losses*/
+var lossCounter = 0;
+
+/*Number of chances you have before the game is over*/
 var numGuesses = 11;
+
+
+
+
+/*
+Function needed for game:
+Startgame function
+Check Letter function
+RoundComplete function
+
+*/
+
+
+
+
+
+
+
+
+
 
 function startGame(){
 /*
@@ -37,7 +59,7 @@ function startGame(){
 2. want to break up that random word into letters and replace them with
 underscores x
 3. we want to add those underscores to the HTML 
-4. numguesses always equals 9, and blankandsuccess is an empty array, 
+4. numguesses always equals 11 , and blankandsuccess is an empty array, 
 and wronggueses is empty as well x
 */
 wrongGuesses = [];
@@ -45,8 +67,9 @@ console.log("this is wrong guesses in startGame", wrongGuesses);
 numGuesses = 11;
 blanksAndSuccesses = [];
 
-
+/*Randomly generates word from the list*/
 chosenWord = wordList[Math.floor(Math.random() * wordList.length)];
+/*separating the strings into substrings*/
 lettersInChosenWord = chosenWord.split("");
 numBlanks = lettersInChosenWord.length;
 console.log(chosenWord);
@@ -60,9 +83,17 @@ document.getElementById('word-blank').innerHTML = blanksAndSuccesses.join(" ");
 document.getElementById('guesses-left').innerHTML = numGuesses;
 
 
-
 }
 
+
+
+
+
+
+
+
+
+/*OnkeyUp function passes letter into this function*/
 function checkLetters(letter){
     /*
     1. Compare the letter the user picks matches any of the letters in the word
@@ -103,6 +134,12 @@ function checkLetters(letter){
 
 }
 
+
+
+
+
+
+
 function roundComplete(){
     /*
     1. Its going to update the HTML with letters that are in the word
@@ -140,6 +177,14 @@ function roundComplete(){
 
 }
 
+
+
+
+
+
+
+
+
 startGame();
 document.onkeyup = function(event){
     /*
@@ -155,39 +200,6 @@ document.onkeyup = function(event){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Counts the number of wins and losses of the user
-// var wins = 0;
-// var losses = 0;
-
-
-
-// // User key input
-// document.onkeyup = function() {
-//     var userguess = String.fromCharCode(event.keyCode).
-//         toUpperCase();
-
-//     console.log(userguess);
-
-// }
 
 
 
