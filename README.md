@@ -5,6 +5,7 @@ Homework 3
 
 
 Instructions:
+Post GitHub and Heroku Links to BootCamp Spot
 
 Week 3 Assignment
 
