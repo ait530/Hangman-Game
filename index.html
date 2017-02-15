@@ -1,19 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hangman Game in Halo theme</title>
+  <title>Hangman Game in Coffee theme</title>
+  
+  <!-- Randy's Notes:
+  Setup the game state
+    
+  *Use a JS object to track state
+
+  Game needs to generate a word from a list
+  
+  *Lazily, start with a word
+
+  We need to accept user input to guess the word
+  
+  *Use the prompt function to get user input
+
+  We need to keep track of the number of guesses
+
+  *Add user guesses to an array
+
+  We need to compare the user guesses to the game word
+
+  * I have no idea right now
+
+  We need to show the user their game status
+
+  Render a scoreboard on the page
+
+
+Object:
+  var gameState = {
+    gameWord: "zebra",
+    currentGuesssedLetter: "",
+    currentGuessedWord: "",
+    numberOfGuesses: 0;
+  };
+
+  document.onkeyup = function(event) {
+    var guessedLetter = "a";
+    gameState.currentGuessedLetter = guessedLetter;
+    gameState.numberOfGuesses++;
+    renderScoreboard();
+  };
+
+
+  function renderScoreboard() {
+    var scoreboard document.getElementById("scoreboard");
+    scoreboard.innerHTML = gameState.numberOfGuesses;
+  }
   
 
-  <!--Pseudocode: 
-  Programming Hangman Game:
-  Rules)The user has to guess a letter
+  <div class="scoreboard"></div>
+
+   -->
+
+  <!--Pseudocode:
+  Summary: A one page program that displays a themed hangman title and interactive hangman game. The game will consist of randomly generated dashed lines that reveal letter(s) upon correct letter guesses from the user. If the user does not guess correctly, the guess letter is revealed in a letters already guessed section. In addition, the number of guesses remaining is a number (possbily randomly generated depending on word) that will decrease for each incorrect user guess.
+  
+  /////////////////////////
+
+  Rules: The user has to guess a letter.
   If the user guesses a correct letter, the user gets +1 score on wins
   If the user does not guess correctly, the users gets +1 score on losses
   The user has a limited number of guesses: the number of guesses will update
-  Your Guesses So Far: displays the specific letters that the user typed. These are displayed until the user either wins or loses -->
+  Your Guesses So Far: displays the specific letters that the user typed. These are displayed until the user either wins or loses and refreshes in number. If the player loses, the game will reset the number of wins and losses to 0.
 
-
-
+  Extras: There is a section on the page that displays images, the image will change depending upon the word being guess(may act as a hint). There is a changing subtitle that is related to the last correctly answered word -->
 
   
   <!--BOOTSTRAP-->
@@ -21,28 +74,56 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
-  <!--JavaScript (game.js)-->
-  <script type="text/javascript" src="assets/javascript/game.js"></script>
+  
 
   
   <!--External CSS-->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 </head>
+
 
 
 
 <body>
 
+<div class="jumbotron">
+  <div class="container">
+    <div class="page-header">
+      <h1>Hangman: Coffee Edition</h1>
+    </div>
 
-<div class="page-header">
-  
-  <h1>Hangman</h1>
+
+    <div class="instructions">
+     <h1>Press Any Key To Get Started!</h1>
+    </div>
+
+    <div class="images">
+      <div class="coffeeImage">
+      <img src="assets/images/cup_of_coffee_188317.jpg" alt="coffee">
+      </div>
+    </div>
+
+    <div class ="game">
+    <p>Guesses Left: <span id="guesses-left"></span></p>
+
+    <p>Wrong Guesses: <span id="wrong-guesses"></span></p>
+
+    <p>Wins: <span id="win-counter"></span></p>
+
+    <p>Losses: <span id="loss-counter"></span></p>
+    <h3 id="word-blank"></h3>
+    </div>
+
+
+
+
+    <!--JavaScript (game.js)-->
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+  </div>
 </div>
+<div class="panel-footer">Copyright 2017 Aaron Trierweiler</div>
 
-<div class="instructions">
-<h1>Press Any Key To Get Started!</h1>
 </div>
-
-
 </body>
 </html>
