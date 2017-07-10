@@ -34,7 +34,7 @@ var wrongGuesses = [];
 /*Win counter starts at 0 and builds up with number of wins*/
 var winCounter = 0;
 /*Number of losses*/
-var lossCounter = 0;
+var lossCounter = 1;
 
 /*Number of chances you have before the game is over*/
 var numGuesses = 10;
