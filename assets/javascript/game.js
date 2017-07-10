@@ -14,7 +14,9 @@ var wordList = [
  "marocchino",
  "affogato",
  "mocha",
- "redeye"
+ "redeye",
+ "marocchino"
+
 ]
 
 /* "" stands for a string; when we select a word at random, it goes in this array; the word that the user has to guess */
@@ -37,6 +39,13 @@ var lossCounter = 0;
 /*Number of chances you have before the game is over*/
 var numGuesses = 10;
 
+/*
+Function needed for game:
+Startgame function
+Check Letter function
+RoundComplete function
+
+*/
 
 function startGame(){
 /*
@@ -69,7 +78,6 @@ document.getElementById('guesses-left').innerHTML = numGuesses;
 
 
 }
-
 
 /*OnkeyUp function passes letter into this function*/
 function checkLetters(letter){
@@ -154,4 +162,5 @@ document.onkeyup = function(event){
     console.log("this is the letter we typed", letterGuessed)
     checkLetters(letterGuessed)
     roundComplete();
+
 }
