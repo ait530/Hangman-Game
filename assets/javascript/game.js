@@ -15,7 +15,8 @@ var wordList = [
  "affogato",
  "mocha",
  "redeye",
- "marocchino"
+ "marocchino",
+ "barista"
 
 ]
 
@@ -37,7 +38,7 @@ var winCounter = 0;
 var lossCounter = 1;
 
 /*Number of chances you have before the game is over*/
-var numGuesses = 10;
+var numGuesses = 8;
 
 /*
 Function needed for game:
@@ -56,9 +57,11 @@ underscores x
 4. numguesses always equals 11 , and blankandsuccess is an empty array, 
 and wronggueses is empty as well x
 */
+
+document.getElementById('wrong-guesses').innerHTML = ""; 
 wrongGuesses = [];
-console.log("this is wrong guesses in startGame", wrongGuesses);
-numGuesses = 10;
+console.log("this is the wrong guesses in startGame", wrongGuesses);
+numGuesses = 8;
 blanksAndSuccesses = [];
 
 /*Randomly generates word from the list*/
@@ -102,7 +105,6 @@ function checkLetters(letter){
         }
     }
     else{
-
         if(chosenWord[i] !== letter) {
             numGuesses --;
             wrongGuesses.push(letter)
@@ -137,14 +139,15 @@ function roundComplete(){
     console.log(blanksAndSuccesses);
     if(lettersInChosenWord.join(" ") === blanksAndSuccesses.join(" ")){
         winCounter++;
-        alert("You win!");
+        alert("You win! Correct Word: " + chosenWord);
         document.getElementById('win-counter').innerHTML = winCounter;
         startGame();
     }else if(numGuesses === 0){
         document.getElementById('loss-counter').innerHTML  = lossCounter ++;
         document.getElementById('wrong-guesses').innerHTML = "";
-        alert("Sorry, you loss this round.");        
+        alert("Sorry, you loss this round.");       
         startGame();
+
     }
 
 }
@@ -156,6 +159,7 @@ document.onkeyup = function(event){
     2. its going to pass it through the CheckLetter function 
     */
     var letterGuessed = String.fromCharCode(event.keyCode).toLowerCase();
+
     console.log("this is the letter we typed", letterGuessed)
     checkLetters(letterGuessed)
     roundComplete();
