@@ -87,29 +87,27 @@ function checkLetters(letter){
     is in the word. If so, do something, if not, do something else
     3. If the user is wrong we want to decrease the numGuesses variables by one
     */
-
     var letterInWord = false;
 
     for(var i = 0; i < numBlanks; i++){
         if(chosenWord[i] === letter){
             letterInWord = true;
-
         }
     }
-
     if(letterInWord){
         for(i = 0; i < numBlanks; i++){
             if(chosenWord[i] === letter){
             blanksAndSuccesses[i] = letter;
-
+            }
         }
-
-        }
-    }else{
-        numGuesses --;
-        wrongGuesses.push(letter)
     }
+    else{
 
+        if(chosenWord[i] !== letter) {
+            numGuesses --;
+            wrongGuesses.push(letter)
+        }    
+    }
     /*
     to check if a letter is already in the wrong guesses array. What we want to do
     is set up an if/else conditional that will run a for loop that will iterate over
@@ -131,7 +129,6 @@ function roundComplete(){
     document.getElementById('word-blank').innerHTML = blanksAndSuccesses.join(" ");
     document.getElementById('guesses-left').innerHTML = numGuesses;
     document.getElementById('wrong-guesses').innerHTML = wrongGuesses.join(" ");
-
 
     // if(blanksAndSuccesses.indexOf(letter >= 1)){
     //     console.log(letter)
