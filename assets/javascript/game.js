@@ -11,8 +11,10 @@ var wordList = [
  "bombon",
  "frappe",
  "antoccino",
- "marocchino"
-
+ "marocchino",
+ "affogato",
+ "mocha",
+ "redeye"
 ]
 
 /* "" stands for a string; when we select a word at random, it goes in this array; the word that the user has to guess */
@@ -23,6 +25,7 @@ var letterInChosenWord = [];
 var numBlanks = 0;
 /*Holds both underscores and letters; whether the user guesses right or wrong*/
 var blanksAndSuccesses = [];
+
 /*Holds wrong guesses; holds the incorrect letters*/
 var wrongGuesses = [];
 
@@ -33,27 +36,6 @@ var lossCounter = 0;
 
 /*Number of chances you have before the game is over*/
 var numGuesses = 10;
-
-
-
-
-/*
-Function needed for game:
-Startgame function
-Check Letter function
-RoundComplete function
-
-*/
-
-
-
-
-
-
-
-
-
-
 
 
 function startGame(){
@@ -87,15 +69,6 @@ document.getElementById('guesses-left').innerHTML = numGuesses;
 
 
 }
-
-
-
-
-
-
-
-
-
 
 
 /*OnkeyUp function passes letter into this function*/
@@ -136,16 +109,7 @@ function checkLetters(letter){
 
     */
 
-
 }
-
-
-
-
-
-
-
-
 
 
 function roundComplete(){
@@ -178,16 +142,7 @@ function roundComplete(){
         startGame();
     }
 
-
 }
-
-
-
-
-
-
-
-
 
 startGame();
 document.onkeyup = function(event){
@@ -199,5 +154,4 @@ document.onkeyup = function(event){
     console.log("this is the letter we typed", letterGuessed)
     checkLetters(letterGuessed)
     roundComplete();
-
 }

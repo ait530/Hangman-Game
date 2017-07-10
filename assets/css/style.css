@@ -4,15 +4,12 @@ body {
   background-color:black;
 }
 
-
 .jumbotron {
 
   background-image:url("../images/retina_wood.png");
   height:800px;
 
 }
-
-
 
 .page-header {
 
@@ -25,14 +22,8 @@ body {
   border-height:10px;
   width:100%;
   height:180px;
- 
-
-
 
 }
-
-
-
 
 .instructions {
 
@@ -41,12 +32,7 @@ body {
   text-align: center;
   float:left;
 
-
 }
-
-
-
-
 
 
 .game {
@@ -58,11 +44,7 @@ body {
   position:relative;
   float:left;
 
-
 }
-
-
-
 
 #guesses-left {
   font-family: 'Open Sans', sans-serif;
@@ -70,21 +52,17 @@ body {
 
 }
 
-
-
 #wrong-guesses {
   font-family: 'Open Sans', sans-serif;
   font-size:30px;
 
 }
 
-
 #win-counter {
   font-family: 'Open Sans', sans-serif;
   font-size:30px;
 
 }
-
 
 
 #loss-counter {
@@ -94,30 +72,21 @@ body {
 }
 
 
-
 .images {
 
   float:left;
   position:absolute;
   margin-top:200px;
 
-
 }
-
-
 
 
 .img-fluid {
   height:360px;
   width:360px;
   margin-left:700px;
-  
 
 }
-
-
-
-
 
 .footer {
   clear:both;
@@ -128,5 +97,4 @@ body {
   text-align:center;
   padding:40px;
   font-size:20px;
-
 }
